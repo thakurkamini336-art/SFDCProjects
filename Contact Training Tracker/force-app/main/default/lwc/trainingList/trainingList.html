@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Training List" icon-name="standard:task">
+        <template for:each={trainings} for:item="training">
+            <div key={training.Id} class="slds-box">
+                <p> <strong> {training.Course_Name__c}</strong>- {training.Status__c }
+                <lightning-button label="Mark as Complete" variant="brand" class="slds-p-left_large" onclick={handleTraining} data-id={training.Id}></lightning-button>      
+                </p>  
+            </div>
+        </template>
+    </lightning-card>
+</template>
