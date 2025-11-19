@@ -1,0 +1,15 @@
+<template>
+        <lightning-card  title="Personal Information" icon-name="standard:people">
+            <div class="slds-box slds-var-m-bottom_small slds-var-p-left_medium">
+             <div class="slds-grid slds-wrap">
+             <div class="slds-col slds-size_11-of-12">
+                <lightning-input type="text" label="Full Name" data-field="fullName" onkeyup={handlePersonlInfoChange}></lightning-input>
+                <lightning-input type="email" label="Email" data-field="email" onchange={handlePersonlInfoChange}></lightning-input>
+                <lightning-input type="phone" label="Phone" data-field="phone" onchange={handlePersonlInfoChange}></lightning-input>
+                <lightning-input type="text" label="Address" data-field="address" onchange={handlePersonlInfoChange}></lightning-input>
+            </div>
+            </div>
+            </div>
+
+        </lightning-card>
+</template>

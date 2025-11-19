@@ -1,0 +1,97 @@
+<template>
+    <lightning-card  >
+        
+        <h2 slot="title" class="custom-card-header slds-text-heading_medium ">
+            <lightning-icon icon-name="standard:title_party" size="small"></lightning-icon>
+             Preview Resume
+        </h2>
+
+        <!-- Card body wrapper with SLDS spacing + custom background class -->
+        <div class=" slds-var-p-horizontal_medium slds-var-p-vertical_small cardBodyCloudBlue">
+            <!-- Personal Information -->
+            <template if:true={personalInfo}>
+                <section class=" slds-var-m-bottom_medium">
+                    <ul class="slds-has-dividers_top-space"></ul>
+                    <h3 class="slds-text-title_caps slds-text-title_bold slds-text-align_left slds-var-m-bottom_x-small">Personal Information</h3>
+                    <dl class="slds-list_horizontal slds-wrap">
+                        <dt class="slds-item_label  slds-truncate " title="Full Name">Full Name:{personalInfo.fullName}</dt>
+
+                        <dt class="slds-item_label  slds-truncate" title="Email">Email:{personalInfo.email}</dt>
+
+                        <dt class="slds-item_label slds-truncate" title="Phone">Phone: {personalInfo.phone}</dt>
+
+                        <dt class="slds-item_label slds-truncate" title="Address">Address: {personalInfo.address}</dt>
+                        
+                    </dl>
+                </section>
+            </template>
+
+            <!-- Education Details -->
+            <section class="slds-var-m-bottom_medium">
+                <h3 class="slds-text-title_caps slds-text-title_bold slds-text-align_left slds-var-m-bottom_x-small">Education Details</h3>
+                <template if:true={educations}>
+                    <ul class="slds-has-dividers_top-space" aria-label="Education List">
+                        <template for:each={educations} for:item="education">
+                            <li key={education.id} class="slds-item slds-p-vertical_x-small">
+                                <dl class="slds-list_horizontal slds-wrap">
+                                    <dt class="slds-item_label slds-truncate" title="Degree">Degree: {education.degree} </dt>
+                                    <dt class="slds-item_label slds-truncate" title="Institute">Institute: {education.institute}</dt>
+                                    <dt class="slds-item_label slds-truncate" title="Year">Year: {education.year}</dt>
+
+                                </dl>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:false={educations}>
+                    <p class="slds-text-color_weak slds-m-top_x-small">No education details provided.</p>
+                </template>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="slds-m-bottom_medium">
+                <h3 class="slds-text-title_caps slds-text-title_bold slds-text-align_left slds-m-bottom_x-small">Work Experience</h3>
+                <template if:true={workExperiences}>
+                    <ul class="slds-has-dividers_top-space" aria-label="Work Experience List">
+                        <template for:each={workExperiences} for:item="workExperience">
+                            <li key={workExperience.id} class="slds-item slds-p-vertical_x-small">
+                                <dl class="slds-list_horizontal slds-wrap">
+                                    <dt class="slds-item_label slds-truncate" title="Job Title">Job Title: {workExperience.jobTitle} </dt>
+                                    <dt class="slds-item_label slds-truncate" title="Company Name">Company Name : {workExperience.company}</dt>
+                                    <dt class="slds-item_label slds-truncate" title="Start Date">Start Date: {workExperience.startDate}</dt>
+                                    <dt class="slds-item_label slds-truncate" title="End Date">End Date : {workExperience.endDate}</dt>
+                                </dl>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:false={workExperiences}>
+                    <p class="slds-text-color_weak slds-m-top_x-small">No work experience provided.</p>
+                </template>
+            </section>
+
+            <!-- Skills -->
+            <section class="slds-m-bottom_medium slds-has-dividers_top-space">
+                <h3 class="slds-text-title_caps slds-text-title_bold slds-text-align_left slds-m-bottom_x-small">Skills</h3>
+                <template if:true={skills}>
+                    <ul class="slds-list_horizontal" aria-label="Skills List">
+                        <template for:each={skills} for:item="skill">
+                            <li key={skill.id} class="slds-p-vertical_x-small">{skill.name}, </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:false={skills}>
+                    <p class="slds-text-color_weak slds-m-top_x-small">No skills provided.</p>
+                </template>
+            </section>
+
+            <!-- Summary -->
+            
+                <section class="slds-m-bottom_medium slds-has-dividers_top-space">
+                    <h3 class="slds-text-title_caps slds-text-title_bold slds-text-align_left slds-var-m-bottom_x-small">Summary</h3>
+                    <p class="slds-text-longform">{summary}</p>
+                </section>
+            
+        </div>
+    </lightning-card>
+</template>

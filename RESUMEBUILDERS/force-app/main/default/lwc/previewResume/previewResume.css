@@ -1,0 +1,65 @@
+/* Preview Resume component scoped styles */
+.custom-card-header {
+    /* Prefer CSS custom properties supported by lightning-card */
+     /*background-color:#0176d3; /* Salesforce brand blue */
+       color:darkblue;
+}
+
+
+
+/* Cloud blue background for the card body without inline styles */
+
+/* Apply background to the immediate content wrapper inside lightning-card
+   NOTE: Avoid styling SLDS utility classes directly; use a custom class and add it in the markup */
+:host .cardBodyCloudBlue {
+    /* SLDS Cloud Blue 95 approximation */
+    background-color: #D8F1FF;
+    font-size: medium;
+    /* subtle texture alternative could be added via background-image if desired */
+}
+
+/* Heading styles: ensure bold and left aligned for all section titles */
+:host h3 {
+    font-weight: bold; /* bold */
+    text-align: left;
+}
+
+/* Center all h2 headings in this component */
+:host h2 {
+    text-align: center;
+}
+
+
+/* Lists spacing tweaks for readability */
+:host .slds-list_horizontal dt,
+:host .slds-list_horizontal dd {
+    margin-bottom: 0.25rem;
+}
+
+/* Ensure each dd appears on a new line (block-level) */
+:host .slds-list_horizontal dt {
+    display: block;
+    width: 100%;
+    font-weight: semibold;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #16325C; /* SLDS text color token alternative for better contrast */
+    text-transform: capitalize;
+    
+}
+
+:host .slds-list_dotted li {
+    margin-left: 1rem;
+}
+
+/* Sections vertical rhythm */
+:host section {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-radius: 0.25rem;
+}
+
+/* Improve contrast of weak text on blue background */
+:host .slds-text-color_weak {
+    color: #16325C; /* SLDS text color token alternative for better contrast */
+}

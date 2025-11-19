@@ -1,0 +1,26 @@
+<template>
+    <div class="slds-grid">
+  <div class="slds-col slds-p-horizontal_medium"><span>
+   <c-personal-Informations onupdateresume={handleUpdateResume}> </c-personal-Informations>
+    <c-education-Details onupdateeducation={handleUpdateEducation} ></c-education-Details>
+    <c-work-Experiences onupdateworkexperience={handleUpdateWorkExperiences}></c-work-Experiences>
+    <c-skills onupdateskill={handleUpdateSkills}></c-skills>
+    <c-summary onupdatesummary={handleUpdateSummary}></c-summary>
+  </span></div>
+
+  <div class="slds-col slds-var-p-horizontal_medium"><span>
+    <c-preview-resume personal-info={personalinfo} 
+     
+     educations={educations}
+     
+     work-experiences={workExperiences}
+     skills={skills}
+     summary={Summary}>
+     
+    </c-preview-Resume>
+  </span></div>
+</div>
+    
+    
+   
+</template>

@@ -1,0 +1,25 @@
+<template>
+    
+  
+     <lightning-card  title="Work Experience" icon-name="standard:survey">
+
+        <template for:each={workExperiences} for:item="workExperience" for:index="index">
+        <div class="slds-box slds-m-bottom_small slds-p-left_medium" key={workExperience.id}>
+                <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_11-of-12">
+            
+   
+                <lightning-input type="text" label="Job Title" data-field="jobTitle" data-index={index} onchange={handleWorkExperienceChange}></lightning-input>
+                <lightning-input type="text" label="Company Name" data-field="company" data-index={index} onchange={handleWorkExperienceChange}></lightning-input>
+                <lightning-input type="date" label="Start Date" data-field="startDate" data-index={index} onchange={handleWorkExperienceChange}></lightning-input>
+                <lightning-input type="date" label="End Date" data-field="endDate" data-index={index} onchange={handleWorkExperienceChange} ></lightning-input>
+
+            
+         </div>
+         </div>
+        </div>
+         </template>
+            <lightning-button variant="brand-outline" label="Add Experience" title="Add Education" onclick={addExperience} class="slds-p-left_medium"></lightning-button>
+        </lightning-card>
+
+</template>
